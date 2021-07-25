@@ -9,12 +9,14 @@ func main() {
 }
 
 func fizzBuzz(Num int) string {
-	var result string = ""
+	if Num % 3 == 0 && Num % 5 == 0 {
+		return "FizzBuzz"
+	}
 	if Num % 3 == 0 {
-		result += "Fizz"
+		return "Fizz"
 	}
 	if Num % 5 == 0 {
-		result += "Buzz"
+		return "Buzz"
 	}
-	return result
+	return ""
 }
