@@ -23,7 +23,7 @@ func (myStack *MyStack) isEmpty() bool {
 }
 
 func (myStack *MyStack) pop() (Node, bool) {
-	if myStack.top == nil {
+	if myStack.isEmpty() {
 		return Node{}, false
 	}
 	poppedElement := *myStack.top
@@ -32,7 +32,7 @@ func (myStack *MyStack) pop() (Node, bool) {
 }
 
 func (myStack *MyStack) peek() (Node, bool) {
-	if myStack.top == nil {
+	if myStack.isEmpty() {
 		return Node{}, false
 	}
 	return *myStack.top, true

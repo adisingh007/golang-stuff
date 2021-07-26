@@ -33,13 +33,14 @@ func (myQueue *MyQueue) offer(node Node) {
 }
 
 func (myQueue *MyQueue) poll() (Node, bool) {
-	if myQueue.rear == nil {
+	if myQueue.isEmpty() {
 		return Node{}, false
 	}
 
 	polledNode := myQueue.front
 	myQueue.front = myQueue.front.next
-	if myQueue.front == nil {
+
+	if myQueue.isEmpty() {
 			myQueue.rear = nil
 	} else {
 		myQueue.front.prev = nil
@@ -48,7 +49,7 @@ func (myQueue *MyQueue) poll() (Node, bool) {
 }
 
 func (myQueue *MyQueue) peek() (Node, bool) {
-	if myQueue.front == nil {
+	if myQueue.isEmpty() {
 		return Node{}, false
 	}
 	return *myQueue.front, true
