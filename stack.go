@@ -58,4 +58,20 @@ func main() {
 		poppedElement, _ := myStack.pop()
 		fmt.Println(poppedElement.data)
 	}
+
+	fmt.Println();
+
+	myStack.push(Node{50, myStack.top})
+	myStack.push(Node{70, myStack.top})
+	myStack.push(Node{90, myStack.top})
+	myStack.push(Node{110, myStack.top})
+	myStack.push(Node{130, myStack.top})
+	myStack.push(Node{150, myStack.top})
+	myStack.push(Node{170, myStack.top})
+
+
+	for !myStack.isEmpty() {
+		poppedElement, _ := myStack.pop()
+		fmt.Println(poppedElement.data)
+	}
 }
